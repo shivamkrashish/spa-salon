@@ -1,0 +1,80 @@
+@import "tailwindcss";
+/* DARK LUXURY BG */
+body {
+  @apply bg-[#0b0f1a] text-white;
+}
+
+/* GLASS */
+.glass {
+  @apply bg-white/10 backdrop-blur-xl border border-white/10;
+}
+
+/* GRADIENT BUTTON */
+.btn {
+  @apply px-6 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:scale-105 transition;
+}
+
+/* CARD */
+.card {
+  @apply rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition;
+}
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #fbbf24;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link {
+  position: relative;
+  color: #9ca3af;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: white;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #fbbf24;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.4);
+}
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
