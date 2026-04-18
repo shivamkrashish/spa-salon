@@ -10,7 +10,6 @@ A modern, elegant and fully responsive Spa & Salon website designed to provide a
 - 🎯 Category-wise filtering (Hair, Skin, Makeup, etc.)
 - 🔍 Advanced search functionality
 - ⭐ Customer reviews & ratings system
-- 🛒 Add to cart functionality
 - 📱 Fully responsive design (Mobile + Desktop)
 - ⚡ Fast and smooth UI with animations
 - 📲 WhatsApp booking integration (No backend required)
