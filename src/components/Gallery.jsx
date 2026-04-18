@@ -42,10 +42,10 @@ const Gallery = () => {
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-4xl md:text-6xl font-bold">
-          Netflix <span className="text-pink-500">Gallery</span>
+          Spa <span className="text-pink-500">Gallery</span>
         </h2>
         <p className="text-gray-400 mt-3">
-          Auto sliding cinematic preview
+          Discover moments of relaxation & beauty
         </p>
       </div>
 
