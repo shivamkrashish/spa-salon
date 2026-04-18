@@ -1,4 +1,5 @@
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
@@ -19,6 +20,7 @@ const Footer = () => {
         <img
           src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9"
           className="w-full h-full object-cover"
+          alt="spa"
         />
         <div className="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
       </div>
@@ -79,7 +81,7 @@ const Footer = () => {
                 onClick={handleWhatsApp}
                 className="glass p-2 rounded-full text-green-400 hover:scale-110 transition"
               >
-                <MessageCircle size={18} />
+                <FaWhatsapp size={18} className="animate-pulse" />
               </button>
 
               <button
