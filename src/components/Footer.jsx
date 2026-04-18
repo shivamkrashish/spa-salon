@@ -1,5 +1,5 @@
 import { Phone } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const Footer = () => {
@@ -44,26 +44,17 @@ const Footer = () => {
           <div>
             <h2 className="font-bold mb-3">Navigation</h2>
 
-            <NavLink
-              to="/"
-              className="block text-gray-400 hover:text-white transition relative group"
-            >
+            <NavLink to="/" className="block text-gray-400 hover:text-white transition relative group">
               Home
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-amber-400 transition-all group-hover:w-full"></span>
             </NavLink>
 
-            <NavLink
-              to="/services"
-              className="block text-gray-400 hover:text-white transition relative group mt-2"
-            >
+            <NavLink to="/services" className="block text-gray-400 hover:text-white transition relative group mt-2">
               Services
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-amber-400 transition-all group-hover:w-full"></span>
             </NavLink>
 
-            <NavLink
-              to="/contact"
-              className="block text-gray-400 hover:text-white transition relative group mt-2"
-            >
+            <NavLink to="/contact" className="block text-gray-400 hover:text-white transition relative group mt-2">
               Contact
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-amber-400 transition-all group-hover:w-full"></span>
             </NavLink>
@@ -73,36 +64,70 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h2 className="font-bold mb-3">Contact</h2>
-            <p className="text-gray-400">Bhopal, India</p>
-            <p className="text-gray-400 mt-1">+91 9620996689</p>
 
-            <div className="flex gap-4 mt-4">
+            <p className="text-gray-400">
+              Shikaripalya, Phase 1, Electronic City, Bangalore
+            </p>
+
+            <p className="text-gray-400 mt-1">
+              +91 9620996689
+            </p>
+
+            {/* Icons */}
+            <div className="flex gap-4 mt-4 flex-wrap">
+
+              {/* WhatsApp */}
               <button
                 onClick={handleWhatsApp}
-                className="glass p-2 rounded-full text-green-400 hover:scale-110 transition"
+                className="w-10 h-10 flex items-center justify-center rounded-full 
+                bg-green-500 hover:scale-110 transition shadow-lg"
               >
-                <FaWhatsapp size={18} className="animate-pulse" />
+                <FaWhatsapp size={18} className="text-white" />
               </button>
 
+              {/* Call */}
               <button
                 onClick={handleCall}
-                className="glass p-2 rounded-full text-blue-400 hover:scale-110 transition"
+                className="w-10 h-10 flex items-center justify-center rounded-full 
+                bg-blue-500 hover:scale-110 transition shadow-lg"
               >
-                <Phone size={18} />
+                <Phone size={18} className="text-white" />
               </button>
+
+              {/* Instagram */}
+              <a
+                href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-full 
+                bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 
+                hover:scale-110 transition shadow-lg"
+              >
+                <FaInstagram size={18} className="text-white" />
+              </a>
+
+              {/* Facebook */}
+              <a
+                href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-full 
+                bg-blue-600 hover:bg-blue-700 
+                hover:scale-110 transition shadow-lg"
+              >
+                <FaFacebook size={18} className="text-white" />
+              </a>
+
             </div>
+
           </div>
 
           {/* Subscribe */}
           <div>
             <h2 className="font-bold mb-3">Subscribe</h2>
 
-            <div className="glass flex items-center rounded-full overflow-hidden">
+            <div className="flex items-center rounded-full overflow-hidden bg-white/10 border border-white/10 backdrop-blur-lg">
               <input
                 placeholder="Enter email"
                 className="bg-transparent px-4 py-2 w-full outline-none text-sm"
               />
-              <button className="bg-amber-400 text-black px-4 py-2 text-sm hover:scale-105 transition">
+              <button className="bg-gradient-to-r from-amber-400 to-yellow-500 text-black px-4 py-2 text-sm hover:scale-105 transition">
                 Join
               </button>
             </div>
