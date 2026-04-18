@@ -37,7 +37,8 @@ A modern, elegant and fully responsive Spa & Salon website designed to provide a
 
 ## 📸 Screenshots
 
-(Add your project screenshots here)
+![Uploading image.png…]()
+
 
 ---
 
