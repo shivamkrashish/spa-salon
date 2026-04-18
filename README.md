@@ -1,16 +1,51 @@
-# React + Vite
+# ✨ Spa & Salon — Luxury Beauty Experience
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, elegant and fully responsive Spa & Salon website designed to provide a premium user experience. This project showcases beauty services with interactive UI, smooth animations, and a seamless booking system.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- 💄 Multiple beauty services (Makeup, Hair, Skin, Nails)
+- 🎯 Category-wise filtering (Hair, Skin, Makeup, etc.)
+- 🔍 Advanced search functionality
+- ⭐ Customer reviews & ratings system
+- 🛒 Add to cart functionality
+- 📱 Fully responsive design (Mobile + Desktop)
+- ⚡ Fast and smooth UI with animations
+- 📲 WhatsApp booking integration (No backend required)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React.js
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **State Management:** useState / useEffect
+
+---
+
+## 💡 Project Highlights
+
+- Real-world salon website experience
+- Clean and modern UI/UX design
+- Fully dynamic product/service listing
+- Easy to scale and integrate backend in future
+
+---
+
+## 📸 Screenshots
+
+(Add your project screenshots here)
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/spa-salon.git
+cd spa-salon
+npm install
+npm run dev
