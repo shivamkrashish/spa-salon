@@ -1,12 +1,10 @@
-import { motion } from "framer-motion";
-import { Phone, MapPin, User } from "lucide-react";
+import { Send, Phone, MapPin, Clock } from "lucide-react";
 import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 
 const Contact = () => {
 
   const handleWhatsApp = (e) => {
     e.preventDefault();
-
     const name = e.target.name.value;
     const phone = e.target.phone.value;
     const message = e.target.message.value;
@@ -19,187 +17,157 @@ const Contact = () => {
     );
   };
 
-  const handleCall = () => {
-    window.location.href = "tel:9620996689";
-  };
-
   return (
-    <section className="relative min-h-screen text-white overflow-hidden">
+    <section className="min-h-screen bg-[#0B0F19] text-white px-4 sm:px-6 md:px-16 py-16 md:py-20">
 
-      {/* Background */}
-      <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1552693673-1bf958298935"
-          className="w-full h-full object-cover"
-          alt="spa"
-        />
-        <div className="absolute inset-0 bg-black/80"></div>
-      </div>
+      <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
-      <div className="relative z-10 px-6 md:px-12 py-20">
+        {/* LEFT SIDE */}
+        <div className="bg-[#111827] rounded-3xl p-6 md:p-8 space-y-6 shadow-xl border border-white/10">
 
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Contact Us
+          <h1 className="text-xl md:text-2xl font-bold tracking-wide">
+            SPA & <span className="text-amber-400">SALON.</span>
           </h1>
 
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            Have questions or want to book a relaxing session?  
-            Our expert team is available <span className="text-amber-400">24/7</span> to assist you.  
-            Connect with us directly and experience premium care.
+          {/* CALL */}
+          <div className="flex items-center gap-4">
+            <div className="bg-gray-800 p-3 rounded-xl">
+              <Phone className="text-yellow-400" size={18} />
+            </div>
+            <div>
+              <p className="text-xs text-gray-400">CALL US</p>
+              <p className="font-semibold text-sm md:text-base">+91 96209 96689</p>
+            </div>
+          </div>
+
+          {/* WHATSAPP */}
+          <div className="flex items-center gap-4">
+            <div className="bg-gray-800 p-3 rounded-xl">
+              <FaWhatsapp className="text-green-400" size={18} />
+            </div>
+            <div>
+              <p className="text-xs text-gray-400">WHATSAPP</p>
+              <p className="font-semibold text-sm md:text-base">+91 96209 96689</p>
+            </div>
+          </div>
+
+          {/* LOCATION */}
+          <div className="flex items-start gap-4">
+            <div className="bg-gray-800 p-3 rounded-xl">
+              <MapPin className="text-red-400" size={18} />
+            </div>
+            <div>
+              <p className="text-xs text-gray-400">LOCATION</p>
+              <p className="text-sm leading-relaxed">
+                Shikaripalya, Phase 1, Electronic City, Bangalore
+              </p>
+            </div>
+          </div>
+
+          {/* WORKING HOURS */}
+          <div className="flex items-center gap-4">
+            <div className="bg-gray-800 p-3 rounded-xl">
+              <Clock className="text-amber-400" size={18} />
+            </div>
+            <div>
+              <p className="text-xs text-gray-400">WORKING HOURS</p>
+              <p className="text-sm">09:00 AM - 09:00 PM (Daily)</p>
+            </div>
+          </div>
+
+          {/* SOCIAL */}
+          <div className="flex gap-4 pt-4">
+
+            {/* Instagram */}
+            <a
+              href="#"
+              className="p-2 border border-gray-700 rounded-full 
+              hover:border-pink-500 hover:text-pink-500 
+              active:scale-90 transition"
+            >
+              <FaInstagram />
+            </a>
+
+            {/* Facebook */}
+            <a
+              href="#"
+              className="p-2 border border-gray-700 rounded-full 
+              hover:border-blue-500 hover:text-blue-500 
+              active:scale-90 transition"
+            >
+              <FaFacebook />
+            </a>
+
+          </div>
+
+        </div>
+
+        {/* RIGHT SIDE FORM */}
+        <div className="bg-[#F5F5F5] text-black rounded-3xl p-6 md:p-8 shadow-xl">
+
+          <h2 className="text-xl md:text-2xl font-bold mb-2">
+            Send a <span className="text-amber-500">Message.</span>
+          </h2>
+
+          <p className="text-gray-500 text-sm mb-6">
+            Have questions? Fill out the form and we’ll contact you.
           </p>
-        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-10">
+          <form onSubmit={handleWhatsApp} className="space-y-4">
 
-          {/* FORM */}
-          <motion.form
-            onSubmit={handleWhatsApp}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="bg-white/10 backdrop-blur-2xl p-8 rounded-2xl space-y-6 border border-white/10 shadow-2xl hover:shadow-amber-400/10 transition"
-          >
-            {/* Heading */}
-            <h2 className="text-2xl font-semibold flex items-center gap-3">
-              <User size={22} className="text-amber-400 drop-shadow-lg" />
-              <span className="bg-gradient-to-r from-amber-300 via-yellow-400 to-orange-400 
-              bg-clip-text text-transparent font-bold tracking-wide">
-                Send a Message
-              </span>
-            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              <input
+                name="name"
+                placeholder="Your Name"
+                className="p-3 rounded-xl bg-gray-200 outline-none 
+                focus:ring-2 focus:ring-amber-400"
+                required
+              />
 
-            {/* Inputs */}
-            <input
-              name="name"
-              placeholder="Your Name"
-              required
-              className="w-full p-3 rounded-lg bg-white/5 border border-white/10 
-              outline-none focus:ring-2 focus:ring-amber-400 focus:bg-white/10 transition"
-            />
+              <input
+                name="phone"
+                placeholder="+91 00000 00000"
+                className="p-3 rounded-xl bg-gray-200 outline-none 
+                focus:ring-2 focus:ring-amber-400"
+                required
+              />
+            </div>
 
             <input
-              name="phone"
-              placeholder="Phone Number"
-              required
-              className="w-full p-3 rounded-lg bg-white/5 border border-white/10 
-              outline-none focus:ring-2 focus:ring-amber-400 focus:bg-white/10 transition"
+              placeholder="Service Preference"
+              className="w-full p-3 rounded-xl bg-gray-200 outline-none 
+              focus:ring-2 focus:ring-amber-400"
             />
 
             <textarea
               name="message"
-              placeholder="Your Message"
+              placeholder="How can we help you?"
               rows="4"
-              className="w-full p-3 rounded-lg bg-white/5 border border-white/10 
-              outline-none focus:ring-2 focus:ring-amber-400 focus:bg-white/10 transition"
+              className="w-full p-3 rounded-xl bg-gray-200 outline-none 
+              focus:ring-2 focus:ring-amber-400"
             ></textarea>
 
-            {/* Button */}
+            {/* BUTTON */}
             <button
-              className="w-full bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-400 
-              text-black py-3 rounded-full hover:scale-105 transition 
-              shadow-lg hover:shadow-amber-400/40 font-semibold"
+              className="w-full bg-amber-500 text-white py-3 rounded-full 
+              font-semibold flex items-center justify-center gap-2 
+              transition-all duration-300 shadow-lg
+
+              hover:bg-black hover:scale-105 hover:shadow-amber-500/40
+              active:scale-95 active:bg-black
+              focus:outline-none focus:ring-2 focus:ring-amber-400
+
+              group"
             >
-              Send via WhatsApp
+              Send Inquiry
+              <Send
+                size={18}
+                className="transition-transform duration-300 
+                group-hover:translate-x-1 group-active:translate-x-1"
+              />
             </button>
-          </motion.form>
 
-          {/* INFO */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="space-y-6"
-          >
-
-            <div className="bg-white/10 backdrop-blur-2xl p-6 rounded-2xl space-y-5 border border-white/10 shadow-2xl hover:shadow-green-400/10 transition">
-
-              <h2 className="text-lg font-semibold text-amber-400 tracking-wide">
-                Talk to Our Expert
-              </h2>
-
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Hi 👋, I’m <span className="text-white font-semibold">MD Fajal</span>,  
-                your personal spa consultant. I’ll help you choose the best service 
-                and ensure a smooth booking experience.
-              </p>
-
-              <p className="text-gray-400 text-sm">
-                ⏰ Available 24/7 for instant support
-              </p>
-
-              {/* Location */}
-              <div className="flex items-center gap-2 text-gray-300 text-sm">
-                <MapPin size={16} className="text-red-400" />
-                Shikaripalya, Phase 1, Electronic City, Bangalore
-              </div>
-
-              {/* Buttons */}
-              <div className="flex gap-4 mt-3">
-
-                <button
-                  onClick={handleCall}
-                  className="flex items-center gap-2 bg-blue-500 px-4 py-2 rounded-full 
-                  hover:scale-105 transition shadow-lg hover:shadow-blue-400/40"
-                >
-                  <Phone size={16} />
-                  Call Now
-                </button>
-
-                <button
-                  onClick={() =>
-                    window.open("https://wa.me/919620996689", "_blank")
-                  }
-                  className="flex items-center gap-2 bg-green-500 px-4 py-2 rounded-full 
-                  hover:scale-105 transition shadow-lg hover:shadow-green-400/40"
-                >
-                  <FaWhatsapp size={18} />
-                  WhatsApp
-                </button>
-
-              </div>
-
-              {/* Social Icons */}
-              <div className="flex gap-4 mt-5">
-
-                <a
-                  href="#"
-                  className="w-10 h-10 flex items-center justify-center rounded-full 
-                  bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 
-                  hover:scale-110 transition shadow-lg"
-                >
-                  <FaInstagram size={18} className="text-white" />
-                </a>
-
-                <a
-                  href="#"
-                  className="w-10 h-10 flex items-center justify-center rounded-full 
-                  bg-blue-600 hover:bg-blue-700 
-                  hover:scale-110 transition shadow-lg"
-                >
-                  <FaFacebook size={18} className="text-white" />
-                </a>
-
-              </div>
-
-            </div>
-
-            {/* Map */}
-            <div className="rounded-2xl overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps?q=Electronic+City+Bangalore&output=embed"
-                width="100%"
-                height="250"
-                style={{ border: 0 }}
-                loading="lazy"
-              ></iframe>
-            </div>
-
-          </motion.div>
-
+          </form>
         </div>
 
       </div>

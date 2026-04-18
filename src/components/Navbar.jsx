@@ -29,21 +29,25 @@ const Navbar = () => {
   const linkStyle = ({ isActive }) =>
     `nav-link transition ${
       isActive ? "text-white" : "text-gray-300"
-    }`;
+    } hover:text-white`;
 
   return (
     <nav
       className={`fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300
       ${
         scrolled
-          ? "bg-black md:glass md:shadow-lg"
+          ? "bg-black md:backdrop-blur-md md:bg-white/10 md:shadow-lg"
           : "bg-black md:bg-transparent"
       }`}
     >
-      {/* Logo */}
-      <h1 className="text-xl font-bold tracking-wide text-white">
+      {/* ✅ Logo Clickable */}
+      <NavLink
+        to="/"
+        onClick={() => setOpen(false)}
+        className="text-xl font-bold tracking-wide text-white"
+      >
         SPA & SALON<span className="text-amber-400">.</span>
-      </h1>
+      </NavLink>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -73,7 +77,8 @@ const Navbar = () => {
         {/* Book Now */}
         <button
           onClick={handleWhatsApp}
-          className="bg-amber-400 text-black px-5 py-2 rounded-full hover:scale-105 transition hover:shadow-lg"
+          className="bg-amber-400 text-black px-5 py-2 rounded-full 
+          hover:scale-105 transition hover:shadow-lg"
         >
           Book Now
         </button>
@@ -95,15 +100,27 @@ const Navbar = () => {
             : "opacity-0 -translate-y-5 pointer-events-none"
         }`}
       >
-        <NavLink onClick={() => setOpen(false)} to="/" className="nav-link text-white">
+        <NavLink
+          onClick={() => setOpen(false)}
+          to="/"
+          className="text-white text-lg"
+        >
           Home
         </NavLink>
 
-        <NavLink onClick={() => setOpen(false)} to="/services" className="nav-link text-white">
+        <NavLink
+          onClick={() => setOpen(false)}
+          to="/services"
+          className="text-white text-lg"
+        >
           Services
         </NavLink>
 
-        <NavLink onClick={() => setOpen(false)} to="/contact" className="nav-link text-white">
+        <NavLink
+          onClick={() => setOpen(false)}
+          to="/contact"
+          className="text-white text-lg"
+        >
           Contact
         </NavLink>
 
