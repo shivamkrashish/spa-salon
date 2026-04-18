@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, ChevronDown } from "lucide-react";
+import { Phone, ChevronDown } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Hero = () => {
 
@@ -96,43 +97,42 @@ const Hero = () => {
 
       </div>
 
-      {/* ✅ FIXED FLOATING ICONS */}
-   <div className="
-  fixed bottom-5 z-50
-  flex gap-4
-  left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-5
-  md:flex-col items-center
-">
+      {/* ✅ Floating Buttons */}
+      <div className="
+        fixed bottom-5 z-50 flex gap-4
+        left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:right-5
+        md:flex-col items-center
+      ">
 
-  {/* WhatsApp */}
-  <motion.button
-    onClick={handleWhatsApp}
-    initial={{ scale: 0 }}
-    animate={{ scale: 1, y: [0, -6, 0] }}
-    transition={{ delay: 0.3, duration: 2, repeat: Infinity }}
-    whileHover={{ scale: 1.15 }}
-    className="w-12 h-12 flex items-center justify-center rounded-full 
-    bg-green-500/20 backdrop-blur-lg border border-green-400/30 
-    shadow-lg hover:shadow-green-500/50 text-green-400"
-  >
-    <MessageCircle size={22} />
-  </motion.button>
+        {/* WhatsApp */}
+        <motion.button
+          onClick={handleWhatsApp}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1, y: [0, -6, 0] }}
+          transition={{ delay: 0.3, duration: 2, repeat: Infinity }}
+          whileHover={{ scale: 1.15 }}
+          className="w-12 h-12 flex items-center justify-center rounded-full 
+          bg-green-500/20 backdrop-blur-lg border border-green-400/30 
+          shadow-lg hover:shadow-green-500/50 text-green-400"
+        >
+          <FaWhatsapp size={22} className="animate-pulse" />
+        </motion.button>
 
-  {/* Call */}
-  <motion.button
-    onClick={handleCall}
-    initial={{ scale: 0 }}
-    animate={{ scale: 1 }}
-    transition={{ delay: 0.5 }}
-    whileHover={{ scale: 1.15 }}
-    className="w-12 h-12 flex items-center justify-center rounded-full 
-    bg-blue-500/20 backdrop-blur-lg border border-blue-400/30 
-    shadow-lg hover:shadow-blue-500/50 text-blue-400"
-  >
-    <Phone size={22} />
-  </motion.button>
+        {/* Call */}
+        <motion.button
+          onClick={handleCall}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.5 }}
+          whileHover={{ scale: 1.15 }}
+          className="w-12 h-12 flex items-center justify-center rounded-full 
+          bg-blue-500/20 backdrop-blur-lg border border-blue-400/30 
+          shadow-lg hover:shadow-blue-500/50 text-blue-400"
+        >
+          <Phone size={22} />
+        </motion.button>
 
-</div>
+      </div>
 
       {/* Scroll Down */}
       <motion.div

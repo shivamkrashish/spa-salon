@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [dark, setDark] = useState(true);
 
   // Scroll effect
   useEffect(() => {
@@ -16,15 +16,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Dark mode apply
-  useEffect(() => {
-    if (dark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [dark]);
-
   // WhatsApp
   const handleWhatsApp = () => {
     const msg = "Hello, I want to enquire about spa services.";
@@ -34,57 +25,39 @@ const Navbar = () => {
     );
   };
 
+  // NavLink style
+  const linkStyle = ({ isActive }) =>
+    `nav-link transition ${
+      isActive ? "text-white" : "text-gray-300"
+    }`;
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center transition-all duration-300
       ${
         scrolled
-          ? "glass shadow-lg"
-          : "bg-transparent"
+          ? "bg-black md:glass md:shadow-lg"
+          : "bg-black md:bg-transparent"
       }`}
     >
       {/* Logo */}
-      <h1 className="text-xl font-bold tracking-wide">
+      <h1 className="text-xl font-bold tracking-wide text-white">
         SPA & SALON<span className="text-amber-400">.</span>
       </h1>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            `nav-link ${
-              isActive
-                ? "text-black dark:text-white"
-                : "text-gray-500 dark:text-gray-300"
-            }`
-          }
-        >
+        <NavLink to="/" className={linkStyle}>
           Home
         </NavLink>
 
-        <NavLink
-          to="/services"
-          className="nav-link text-gray-500 dark:text-gray-300"
-        >
+        <NavLink to="/services" className={linkStyle}>
           Services
         </NavLink>
 
-        <NavLink
-          to="/contact"
-          className="nav-link text-gray-500 dark:text-gray-300"
-        >
+        <NavLink to="/contact" className={linkStyle}>
           Contact
         </NavLink>
-
-        {/* 🌙 Dark Mode Toggle */}
-        <button
-          onClick={() => setDark(!dark)}
-          className="p-2 rounded-full glass hover:scale-110 transition"
-        >
-          {dark ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
 
         {/* Enquire */}
         <button
@@ -93,7 +66,7 @@ const Navbar = () => {
           bg-green-500/10 border border-green-400/30 text-green-400 
           hover:bg-green-500/20 transition"
         >
-          <MessageCircle size={18} />
+          <FaWhatsapp size={18} className="animate-pulse" />
           Enquire
         </button>
 
@@ -107,17 +80,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Buttons */}
-      <div className="md:hidden flex items-center gap-3">
-
-        {/* Dark Toggle Mobile */}
-        <button
-          onClick={() => setDark(!dark)}
-          className="p-2 rounded-full glass"
-        >
-          {dark ? <Sun size={18} /> : <Moon size={18} />}
-        </button>
-
-        {/* Menu */}
+      <div className="md:hidden flex items-center gap-3 text-white">
         <button onClick={() => setOpen(!open)}>
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -125,22 +88,22 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`absolute top-16 left-0 w-full glass flex flex-col items-center gap-6 py-8 md:hidden transition-all duration-300 
+        className={`absolute top-16 left-0 w-full bg-black flex flex-col items-center gap-6 py-8 md:hidden transition-all duration-300 
         ${
           open
             ? "opacity-100 translate-y-0"
             : "opacity-0 -translate-y-5 pointer-events-none"
         }`}
       >
-        <NavLink onClick={() => setOpen(false)} to="/" className="nav-link">
+        <NavLink onClick={() => setOpen(false)} to="/" className="nav-link text-white">
           Home
         </NavLink>
 
-        <NavLink onClick={() => setOpen(false)} to="/services" className="nav-link">
+        <NavLink onClick={() => setOpen(false)} to="/services" className="nav-link text-white">
           Services
         </NavLink>
 
-        <NavLink onClick={() => setOpen(false)} to="/contact" className="nav-link">
+        <NavLink onClick={() => setOpen(false)} to="/contact" className="nav-link text-white">
           Contact
         </NavLink>
 
@@ -148,7 +111,7 @@ const Navbar = () => {
           onClick={handleWhatsApp}
           className="flex items-center gap-2 px-6 py-2 rounded-full bg-green-500 text-white"
         >
-          <MessageCircle size={18} />
+          <FaWhatsapp size={18} />
           Enquire
         </button>
 

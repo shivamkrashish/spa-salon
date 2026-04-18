@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { MessageCircle, Phone, MapPin, User } from "lucide-react";
+import { Phone, MapPin, User } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
 
@@ -30,6 +31,7 @@ const Contact = () => {
         <img
           src="https://images.unsplash.com/photo-1552693673-1bf958298935"
           className="w-full h-full object-cover"
+          alt="spa"
         />
         <div className="absolute inset-0 bg-black/80"></div>
       </div>
@@ -46,7 +48,6 @@ const Contact = () => {
             Contact Us
           </h1>
 
-          {/* 🔥 NEW DESCRIPTION */}
           <p className="text-gray-400 mt-4 max-w-xl mx-auto">
             Have questions or want to book a relaxing session?  
             Our expert team is available <span className="text-amber-400">24/7</span> to assist you.  
@@ -100,7 +101,7 @@ const Contact = () => {
             className="space-y-6"
           >
 
-            {/* 🔥 PERSONAL TOUCH BOX */}
+            {/* INFO BOX */}
             <div className="glass p-6 rounded-2xl space-y-4">
 
               <h2 className="text-lg font-semibold text-amber-400">
@@ -133,7 +134,7 @@ const Contact = () => {
                   }
                   className="flex items-center gap-2 bg-green-500 px-4 py-2 rounded-full hover:scale-105 transition"
                 >
-                  <MessageCircle size={18} />
+                  <FaWhatsapp size={18} className="animate-pulse" />
                   WhatsApp
                 </button>
 
